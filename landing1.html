@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evento Exclusivo PROVI · 26 de Junio · Bogotá</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #105028;
+      --primary-light: #105028;
+      --secondary: #f5f5f5;
+      --text: #1e1e1e;
+      --bg: #dddddd;
+    }
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      line-height: 1.55;
+      background: var(--bg);
+    }
+    .nav { display: flex; justify-content: flex-end; align-items: center; padding: 1.2rem 2rem; }
+    .nav img { height: 48px; width: auto; }
+
+    header { padding: 3rem 1rem; }
+    .hero { max-width: 1200px; margin: 0 auto; display: grid; gap: 3rem; }
+    @media(min-width:768px) {
+      .hero { grid-template-columns: repeat(2, 1fr); align-items: center; }
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 3.7rem);
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    header p { font-size: 1.1rem; max-width: 600px; margin-bottom: 2rem; }
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--primary);
+      color: #fff;
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+      font-size: 1.05rem;
+      animation: fadeInUp 0.8s ease both;
+    }
+    .btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .hero-img img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.15);
+    }
+
+    section { padding: 4rem 1rem; max-width: 1200px; margin: 0 auto; }
+    .grid { display: grid; gap: 3rem; }
+    @media(min-width:768px) {
+      .grid { grid-template-columns: repeat(2, 1fr); align-items: center; }
+    }
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: .4rem 1.1rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+    .badge-lg { padding: .6rem 1.5rem; font-size: .9rem; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.1rem;
+    }
+    ul.icon-list {
+      list-style: none;
+    }
+    ul.icon-list li {
+      margin-bottom: 1rem;
+      padding-left: 2.2rem;
+      position: relative;
+      font-size: 1.03rem;
+    }
+    ul.icon-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary-light);
+      font-weight: 700;
+    }
+
+    form {
+      background: var(--bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,.05);
+      animation: fadeInUp 0.8s ease both;
+    }
+    form label {
+      display: block;
+      margin-bottom: .45rem;
+      font-weight: 600;
+      font-size: .94rem;
+    }
+    form input, form select {
+      width: 100%;
+      padding: .9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1.4rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: .95rem;
+    }
+    form button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 1rem 2.8rem;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .3s ease;
+      width: 100%;
+    }
+    form button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .policy {
+      font-size: .8rem;
+      color: #555;
+      margin-top: -.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .sponsors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .sponsors img {
+      max-height: 60px;
+      filter: grayscale(100%);
+      transition: filter .3s ease;
+    }
+    .sponsors img:hover {
+      filter: none;
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: .85rem;
+      background: #fafafa;
+      color: #555;
+    }
+
+    /* Animación */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero > div, .grid > div, form button {
+      animation: fadeInUp 0.8s ease both;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <img src="https://via.placeholder.com/120x48?text=Logo" alt="Logo PROVI" />
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div>
+        <span class="badge">Evento exclusivo</span>
+        <h1>Invierte en Finca&nbsp;Raíz con retornos del&nbsp;8‑14 %</h1>
+        <p>Reserva tu lugar en nuestro encuentro privado el <strong>26 de junio</strong> en Bogotá y descubre oportunidades inmobiliarias validadas por <strong>PROVI</strong>. Incluye masterclass de <strong>optimización tributaria</strong> con Paula&nbsp;Rubiano (Forvis&nbsp;Mazars).</p>
+        <a href="#registro" class="btn">Apartar mi cupo</a>
+      </div>
+      <div class="hero-img">
+        <img src="https://via.placeholder.com/500x380?text=Founders+Image" alt="Equipo fundadoras de PROVI" />
+      </div>
+    </div>
+  </header>
+
+  <section id="evento" class="grid">
+    <div>
+      <form id="registro" action="#" method="POST">
+        <h2>Regístrate ahora</h2>
+        <label for="nombre">Nombre completo*</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="telefono">Teléfono de contacto*</label>
+        <input type="tel" id="telefono" name="telefono" required />
+        <label for="correo">Correo electrónico*</label>
+        <input type="email" id="correo" name="correo" required />
+        <label for="ciudad">Ciudad donde vives*</label>
+        <input type="text" id="ciudad" name="ciudad" required />
+        <label for="buscando">¿Estás buscando oportunidades para diversificar tu patrimonio?</label>
+        <select id="buscando" name="buscando" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="activo">Sí, estoy activamente buscando opciones</option>
+          <option value="investigando">Estoy empezando a investigar</option>
+          <option value="interesado">No por ahora, pero me interesa conocer</option>
+        </select>
+        <label for="rango">¿Cuál es el rango de inversión que te gustaría explorar?</label>
+        <select id="rango" name="rango" required>
+          <option value="" disabled selected>Selecciona un rango</option>
+          <option value="<100k">Hasta USD 100.000</option>
+          <option value="170-300k">Entre USD 170.000 y USD 300.000</option>
+          <option value=">300k">Más de USD 300.000</option>
+        </select>
+        <label for="objetivo">¿Cuál es tu objetivo principal al invertir?</label>
+        <select id="objetivo" name="objetivo" required>
+          <option value="" disabled selected>Selecciona tu objetivo</option>
+          <option value="pasivos">Ingresos pasivos en dólares</option>
+          <option value="inflacion">Proteger frente a la inflación</option>
+          <option value="residencia">Residencia o beneficios fiscales</option>
+          <option value="vacacionar">Vacacionar y rentar</option>
+        </select>
+        <label class="policy"><input type="checkbox" required /> Acepto la <a href="#">política de tratamiento de datos</a>.</label>
+        <button type="submit">Enviar registro</button>
+      </form>
+    </div>
+    <div>
+      <span class="badge badge-lg">Por qué asistir</span>
+      <h2>Cupos limitados, ventajas ilimitadas</h2>
+      <ul class="icon-list">
+        <li>Proyectos exclusivos en Colombia, Panamá y República Dominicana.</li>
+        <li>Análisis con IA para optimizar riesgo y rentabilidad.</li>
+        <li>Rentabilidades proyectadas entre 8 % – 14 % anual.</li>
+        <li>Masterclass de optimización tributaria con Paula Rubiano.</li>
+        <li>Networking con desarrolladores y otros inversionistas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="speaker" class="grid" style="align-items:center">
+    <div class="speaker-img">
+      <img src="https://via.placeholder.com/480x640?text=Paula+Rubiano" alt="Paula Rubiano" style="width:100%;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,.1)" />
+    </div>
+    <div>
+      <span class="badge">Speaker invitada</span>
+      <h2>Conoce a Paula Rubiano</h2>
+      <p>Gerente Senior de Impuestos en Forvis Mazars con más de 10 años asesorando a inversionistas y empresas multinacionales. Compartirá cómo optimizar tu carga fiscal.</p>
+    </div>
+  </section>
+
+  <section id="sponsors">
+    <h2 style="text-align:center">Desarrolladores patrocinadores</h2>
+    <div class="sponsors">
+      <img src="https://via.placeholder.com/160x60?text=Bern" alt="Empresas Bern" />
+      <img src="https://via.placeholder.com/160x60?text=Trazos+Urbanos" alt="Trazos Urbanos" />
+      <img src="https://via.placeholder.com/160x60?text=Noval" alt="Noval Properties" />
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Provi. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
